@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="532.0" prefWidth="585.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bematech.integraopera.view.ConfiguracoesController">
+   <children>
+      <SplitPane dividerPositions="0.7842741935483871" layoutX="226.0" layoutY="122.0" prefHeight="513.0" prefWidth="530.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="527.0" prefWidth="453.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" text="Posição Inicial do Número do Apto" />
+                  <TextField fx:id="posicaoInicialApto" alignment="CENTER_RIGHT" layoutX="249.0" layoutY="9.0" prefHeight="27.0" prefWidth="79.0" />
+                  <Label layoutX="14.0" layoutY="48.0" text="Posição Final do Número do Apto" />
+                  <TextField fx:id="posicaoFinalApto" alignment="CENTER_RIGHT" layoutX="249.0" layoutY="43.0" prefHeight="27.0" prefWidth="79.0" />
+                  <Label layoutX="14.0" layoutY="82.0" text="Porta de Escuta" />
+                  <TextField fx:id="portaEscuta" alignment="TOP_RIGHT" layoutX="249.0" layoutY="77.0" prefHeight="27.0" prefWidth="79.0" />
+                  <TableView id="interfacesTable" fx:id="interfacesTable" layoutY="153.0" prefHeight="320.0" prefWidth="353.0" AnchorPane.bottomAnchor="57.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="153.0">
+                    <columns>
+                        <TableColumn id="nomeHotelColumn" fx:id="nomeHotelColumn" editable="false" prefWidth="176.0" text="Hotel" />
+                      <TableColumn id="enderecoColumn" fx:id="enderecoColumn" editable="false" maxWidth="300.0" prefWidth="98.0" text="Endereço" />
+                      <TableColumn id="portaColumn" fx:id="portaColumn" editable="false" prefWidth="75.0" text="Porta" />
+                    </columns>
+                  </TableView>
+                  <Label layoutX="14.0" layoutY="133.0" text="Endereços Interfaces Opera" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="133.0" />
+                  <HBox layoutX="14.0" layoutY="470.0" />
+                  <VBox layoutX="360.0" layoutY="186.0" prefHeight="101.0" prefWidth="79.0" spacing="10.0" AnchorPane.leftAnchor="360.0" AnchorPane.rightAnchor="14.0">
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#handleNewInterface" prefHeight="27.0" prefWidth="76.0" text="Nova" />
+                        <Button mnemonicParsing="false" onAction="#handleEditInterface" prefHeight="27.0" prefWidth="77.0" text="Alterar" />
+                        <Button mnemonicParsing="false" onAction="#handleDeleteInterface" prefHeight="27.0" prefWidth="77.0" text="Excluir">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <HBox layoutX="102.0" layoutY="476.0" spacing="10.0">
+                     <children>
+                        <Button defaultButton="true" mnemonicParsing="false" onAction="#handleSalvarConfig" prefHeight="27.0" prefWidth="87.0" text="Salvar" />
+                        <Button cancelButton="true" mnemonicParsing="false" onAction="#handleReloadConfig" prefHeight="27.0" prefWidth="87.0" text="Cancelar" />
+                     </children>
+                  </HBox>
+                  <CheckBox fx:id="mantemConexaoComInterfaceAtiva" layoutX="14.0" layoutY="109.0" mnemonicParsing="false" text="Mantém conexão com a interface sempre ativa" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="511.0" prefWidth="114.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" text="Apartamentos" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="10.0" />
+                  <TextArea fx:id="listaApartamentos" layoutX="10.0" layoutY="41.0" prefHeight="457.0" prefWidth="133.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="43.0" />
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

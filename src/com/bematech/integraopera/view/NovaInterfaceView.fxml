@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="171.0" prefWidth="347.0" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.bematech.integraopera.view.NovaInterfaceController">
+   <children>
+      <Label layoutX="14.0" layoutY="14.0" text="Nome Hotel" />
+      <TextField fx:id="nomeHotelField" layoutX="14.0" layoutY="31.0" prefHeight="27.0" prefWidth="304.0" />
+      <Label layoutX="14.0" layoutY="64.0" text="Endereço" />
+      <Label layoutX="251.0" layoutY="64.0" text="Porta" />
+      <TextField fx:id="enderecoField" layoutX="14.0" layoutY="81.0" prefHeight="27.0" prefWidth="228.0" />
+      <TextField fx:id="portaField" alignment="CENTER_RIGHT" layoutX="250.0" layoutY="81.0" prefHeight="27.0" prefWidth="69.0" />
+      <HBox layoutX="73.0" layoutY="101.0" prefHeight="27.0" prefWidth="180.0" spacing="10.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="80.0">
+         <children>
+            <Button defaultButton="true" mnemonicParsing="false" onAction="#handleOk" prefHeight="27.0" prefWidth="90.0" text="OK">
+               <opaqueInsets>
+                  <Insets right="10.0" />
+               </opaqueInsets>
+            </Button>
+            <Button cancelButton="true" mnemonicParsing="false" onAction="#handleCancel" prefHeight="27.0" prefWidth="90.0" text="Cancelar" />
+         </children>
+         <opaqueInsets>
+            <Insets left="10.0" right="10.0" />
+         </opaqueInsets>
+         <padding>
+            <Insets left="10.0" right="10.0" />
+         </padding>
+      </HBox>
+   </children>
+</AnchorPane>

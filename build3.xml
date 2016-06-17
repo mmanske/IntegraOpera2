@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project IntegraOpera2 with libraries in sub-folder">
+    <!--this file was created by Eclipse Runnable JAR Export Wizard-->
+    <!--ANT 1.7 is required                                        -->
+    <!--define folder properties-->
+    <property name="dir.buildfile" value="."/>
+    <property name="dir.workspace" value="${dir.buildfile}/.."/>
+    <property name="dir.jarfile" value="${dir.buildfile}/target"/>
+    <target name="create_run_jar">
+        <jar destfile="${dir.jarfile}/IntegradorCMNetOpera.jar">
+            <manifest>
+                <attribute name="Main-Class" value="com.bematech.integraopera.RootController"/>
+                <attribute name="Class-Path" value=". IntegradorCMNetOpera_lib/org.eclipse.fx.ide.css.jfx8_2.3.0.201603030809.jar IntegradorCMNetOpera_lib/log4j-1.2.17.jar IntegradorCMNetOpera_lib/jersey-media-json-jackson-2.22.1.jar IntegradorCMNetOpera_lib/jersey-common-2.22.1.jar IntegradorCMNetOpera_lib/javax.ws.rs-api-2.0.1.jar IntegradorCMNetOpera_lib/javax.annotation-api-1.2.jar IntegradorCMNetOpera_lib/jersey-guava-2.22.1.jar IntegradorCMNetOpera_lib/hk2-api-2.4.0-b31.jar IntegradorCMNetOpera_lib/hk2-utils-2.4.0-b31.jar IntegradorCMNetOpera_lib/aopalliance-repackaged-2.4.0-b31.jar IntegradorCMNetOpera_lib/javax.inject-2.4.0-b31.jar IntegradorCMNetOpera_lib/hk2-locator-2.4.0-b31.jar IntegradorCMNetOpera_lib/javassist-3.18.1-GA.jar IntegradorCMNetOpera_lib/osgi-resource-locator-1.0.1.jar IntegradorCMNetOpera_lib/jersey-entity-filtering-2.22.1.jar IntegradorCMNetOpera_lib/jackson-jaxrs-base-2.5.4.jar IntegradorCMNetOpera_lib/jackson-core-2.5.4.jar IntegradorCMNetOpera_lib/jackson-databind-2.5.4.jar IntegradorCMNetOpera_lib/jackson-jaxrs-json-provider-2.5.4.jar IntegradorCMNetOpera_lib/jackson-module-jaxb-annotations-2.5.4.jar IntegradorCMNetOpera_lib/jackson-annotations-2.5.4.jar IntegradorCMNetOpera_lib/controlsfx-8.40.9.jar IntegradorCMNetOpera_lib/openjfx-dialogs-1.0.3.jar"/>
+            </manifest>
+            <fileset dir="${dir.jarfile}/classes"/>
+        </jar>
+        <delete dir="${dir.jarfile}/IntegradorCMNetOpera_lib"/>
+        <mkdir dir="${dir.jarfile}/IntegradorCMNetOpera_lib"/>
+        <copy file="/Users/marciomanske/.p2/pool/plugins/org.eclipse.fx.ide.css.jfx8_2.3.0.201603030809.jar" todir="${dir.jarfile}/IntegradorCMNetOpera_lib"/>
+        <copy file="/Users/marciomanske/.m2/repository/log4j/log4j/1.2.17/log4j-1.2.17.jar" todir="${dir.jarfile}/IntegradorCMNetOpera_lib"/>
+        <copy file="/Users/marciomanske/.m2/repository/org/glassfish/jersey/media/jersey-media-json-jackson/2.22.1/jersey-media-json-jackson-2.22.1.jar" todir="${dir.jarfile}/IntegradorCMNetOpera_lib"/>
+        <copy file="/Users/marciomanske/.m2/repository/org/glassfish/jersey/core/jersey-common/2.22.1/jersey-common-2.22.1.jar" todir="${dir.jarfile}/IntegradorCMNetOpera_lib"/>
+        <copy file="/Users/marciomanske/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.0.1/javax.ws.rs-api-2.0.1.jar" todir="${dir.jarfile}/IntegradorCMNetOpera_lib"/>
+        <copy file="/Users/marciomanske/.m2/repository/javax/annotation/javax.annotation-api/1.2/javax.annotation-api-1.2.jar" todir="${dir.jarfile}/IntegradorCMNetOpera_lib"/>
+        <copy file="/Users/marciomanske/.m2/repository/org/glassfish/jersey/bundles/repackaged/jersey-guava/2.22.1/jersey-guava-2.22.1.jar" todir="${dir.jarfile}/IntegradorCMNetOpera_lib"/>
+        <copy file="/Users/marciomanske/.m2/repository/org/glassfish/hk2/hk2-api/2.4.0-b31/hk2-api-2.4.0-b31.jar" todir="${dir.jarfile}/IntegradorCMNetOpera_lib"/>
+        <copy file="/Users/marciomanske/.m2/repository/org/glassfish/hk2/hk2-utils/2.4.0-b31/hk2-utils-2.4.0-b31.jar" todir="${dir.jarfile}/IntegradorCMNetOpera_lib"/>
+        <copy file="/Users/marciomanske/.m2/repository/org/glassfish/hk2/external/aopalliance-repackaged/2.4.0-b31/aopalliance-repackaged-2.4.0-b31.jar" todir="${dir.jarfile}/IntegradorCMNetOpera_lib"/>
+        <copy file="/Users/marciomanske/.m2/repository/org/glassfish/hk2/external/javax.inject/2.4.0-b31/javax.inject-2.4.0-b31.jar" todir="${dir.jarfile}/IntegradorCMNetOpera_lib"/>
+        <copy file="/Users/marciomanske/.m2/repository/org/glassfish/hk2/hk2-locator/2.4.0-b31/hk2-locator-2.4.0-b31.jar" todir="${dir.jarfile}/IntegradorCMNetOpera_lib"/>
+        <copy file="/Users/marciomanske/.m2/repository/org/javassist/javassist/3.18.1-GA/javassist-3.18.1-GA.jar" todir="${dir.jarfile}/IntegradorCMNetOpera_lib"/>
+        <copy file="/Users/marciomanske/.m2/repository/org/glassfish/hk2/osgi-resource-locator/1.0.1/osgi-resource-locator-1.0.1.jar" todir="${dir.jarfile}/IntegradorCMNetOpera_lib"/>
+        <copy file="/Users/marciomanske/.m2/repository/org/glassfish/jersey/ext/jersey-entity-filtering/2.22.1/jersey-entity-filtering-2.22.1.jar" todir="${dir.jarfile}/IntegradorCMNetOpera_lib"/>
+        <copy file="/Users/marciomanske/.m2/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-base/2.5.4/jackson-jaxrs-base-2.5.4.jar" todir="${dir.jarfile}/IntegradorCMNetOpera_lib"/>
+        <copy file="/Users/marciomanske/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.5.4/jackson-core-2.5.4.jar" todir="${dir.jarfile}/IntegradorCMNetOpera_lib"/>
+        <copy file="/Users/marciomanske/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.5.4/jackson-databind-2.5.4.jar" todir="${dir.jarfile}/IntegradorCMNetOpera_lib"/>
+        <copy file="/Users/marciomanske/.m2/repository/com/fasterxml/jackson/jaxrs/jackson-jaxrs-json-provider/2.5.4/jackson-jaxrs-json-provider-2.5.4.jar" todir="${dir.jarfile}/IntegradorCMNetOpera_lib"/>
+        <copy file="/Users/marciomanske/.m2/repository/com/fasterxml/jackson/module/jackson-module-jaxb-annotations/2.5.4/jackson-module-jaxb-annotations-2.5.4.jar" todir="${dir.jarfile}/IntegradorCMNetOpera_lib"/>
+        <copy file="/Users/marciomanske/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.5.4/jackson-annotations-2.5.4.jar" todir="${dir.jarfile}/IntegradorCMNetOpera_lib"/>
+        <copy file="/Users/marciomanske/.m2/repository/org/controlsfx/controlsfx/8.40.9/controlsfx-8.40.9.jar" todir="${dir.jarfile}/IntegradorCMNetOpera_lib"/>
+        <copy file="/Users/marciomanske/.m2/repository/org/controlsfx/openjfx-dialogs/1.0.3/openjfx-dialogs-1.0.3.jar" todir="${dir.jarfile}/IntegradorCMNetOpera_lib"/>
+    </target>
+</project>
