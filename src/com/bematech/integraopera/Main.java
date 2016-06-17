@@ -15,7 +15,7 @@ import javax.swing.ImageIcon;
 public class Main {
 
 	
-	private String VERSAO = "2.0";
+	private String VERSAO = "2.1";
 	
 	private Image createImage() {
 		//ImageIcon icon = new ImageIcon(getClass().getClassLoader().getResource("images/Duke16.gif"));
