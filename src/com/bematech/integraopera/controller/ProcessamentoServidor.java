@@ -86,7 +86,7 @@ public class ProcessamentoServidor implements Runnable {
 			}
 		}
 		if (procCliente == null) {
-			procCliente = new ProcessamentoCliente(timeOut, intfOpera, filaRetorno, config.isManteConexaoSempreAtiva());
+			procCliente = new ProcessamentoCliente(timeOut, intfOpera, filaRetorno, config.isMantemConexaoSempreAtiva());
 			listaProcCliente.add(procCliente);
 			new Thread(procCliente).start();
 		}

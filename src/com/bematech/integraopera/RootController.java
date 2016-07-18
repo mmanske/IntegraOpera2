@@ -29,7 +29,7 @@ import javafx.stage.Stage;
 
 public class RootController extends Application {
 
-	private String VERSAO = "2.1.0";
+	private String VERSAO = "2.1.1";
 	private Stage primaryStage;
 	private BorderPane rootLayout;
 	private MenuItem iniciarItem = new MenuItem("Iniciar Execução");

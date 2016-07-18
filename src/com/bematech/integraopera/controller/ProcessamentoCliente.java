@@ -78,30 +78,38 @@ public class ProcessamentoCliente implements Runnable {
 			}
 			socket = new Socket();
 			socket.connect(sockaddr, timeOut * 1000);
-			rd = new BufferedReader(new InputStreamReader(socket.getInputStream()));
-			wr = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
 
 		}
 	}
 
+	
+	private void closeBuffers() {
+		try {
+			rd.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		try {
+			wr.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	private void openBuffers() throws IOException {
+		rd = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+		wr = new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+
+	}
+	
 	public void closeSocket() {
 		//LogUtil.getInstance().logErro("closeSocket()");
 		if (socket != null && socket.isConnected()) {
 			//LogUtil.getInstance().logErro("socket.close()");
-			try {
-				rd.close();
-			} catch (IOException e) {
-				e.printStackTrace();
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			try {
-				wr.close();
-			} catch (IOException e) {
-				e.printStackTrace();
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
 			try {
 				socket.close();
 			} catch (IOException e) {
@@ -205,7 +213,7 @@ public class ProcessamentoCliente implements Runnable {
 					LogUtil.getInstance().logMensagem(intfOpera.getNomeHotel() + " - Processando request de "
 							+ p.getSocket().getInetAddress().getHostAddress());
 					createSocket();
-
+					openBuffers();
 					
 					LogUtil.getInstance()
 							.logMensagem(intfOpera.getNomeHotel() + " - Enviando comando p/ Inteface Opera");
@@ -225,6 +233,7 @@ public class ProcessamentoCliente implements Runnable {
 					LogUtil.getInstance().logMensagem(intfOpera.getNomeHotel() + " - Retorno recebido");
 					enviarMensagemRecebidaParaPDV(p, sb.toString(), intfOpera.getNomeHotel());
 
+					closeBuffers();
 					//p.getSocket().close();
 					if (!this.mantemConexaoAtiva) {
 						closeSocket();	

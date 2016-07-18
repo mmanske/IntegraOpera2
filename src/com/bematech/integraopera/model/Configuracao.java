@@ -3,6 +3,8 @@ package com.bematech.integraopera.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 public class Configuracao {
 
 	private String portaEscuta;
@@ -65,7 +67,8 @@ public class Configuracao {
 		this.mantemConexaoComInterfaceSempreAtiva = mantemConexaoComInterfaceSempreAtiva;
 	}
 	
-	public boolean isManteConexaoSempreAtiva() {
+	@JsonIgnore
+	public boolean isMantemConexaoSempreAtiva() {
 		return this.mantemConexaoComInterfaceSempreAtiva == 1;
 	}
 }
